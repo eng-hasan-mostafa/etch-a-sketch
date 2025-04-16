@@ -2,3 +2,24 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.cell {
+    width: 16px;
+    height: 16px; 
+    border: 1px solid gray;
+}
+
+.sketchpad {
+    width: 500px;
+    display: flex;
+    flex : 1 1 auto;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
