@@ -10,7 +10,10 @@ function generateSketchpad(size) {
     } 
     //utilize event delegation to avoid performance issues. 
     sketchpad.addEventListener('mouseover', (e)=>{
-        e.target.closest('.cell').classList.add('colored');
+        let randomColor = generateRandomColor();
+        let target = e.target.closest('.cell');
+        target.style.backgroundColor = randomColor;
+        target.style.borderColor = randomColor;
     });
 }
 
@@ -25,3 +28,11 @@ resetButton.addEventListener('click', ()=>{
         generateSketchpad(userInput);
     }
 })
+
+function generateRandomColor() {
+    //generate random number between 0 and 255
+    let red = Math.floor(Math.random()*256);
+    let green = Math.floor(Math.random()*256);
+    let blue = Math.floor(Math.random()*256);
+    return `rgb(${red},${green},${blue})`;
+}
