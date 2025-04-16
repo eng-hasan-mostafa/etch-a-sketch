@@ -8,6 +8,11 @@ function generateSketchpad(size) {
         cell.classList.add('cell');
         sketchpad.appendChild(cell);
     } 
+    //utilize event delegation to avoid performance issues. 
+    sketchpad.addEventListener('mouseover', (e)=>{
+        e.target.closest('.cell').classList.add('colored');
+    });
 }
 
 generateSketchpad(16);
+
