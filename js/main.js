@@ -16,3 +16,12 @@ function generateSketchpad(size) {
 
 generateSketchpad(16);
 
+const resetButton = document.querySelector('#reset-btn');
+resetButton.addEventListener('click', ()=>{
+    let userInput = prompt('the number of squares per side for the new grid:');
+    if(userInput > 100) {
+        alert('the number should be less than or equal to 100!');
+    } else {
+        generateSketchpad(userInput);
+    }
+})
