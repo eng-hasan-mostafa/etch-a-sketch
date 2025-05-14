@@ -27,9 +27,12 @@ function generateSketchpad(size) {
     const sketchpad = document.querySelector('.sketchpad');
     sketchpad.innerHTML = '';
     let totalSize = size * size;
-    while(--totalSize) {
+    let cellSize = 960/size;
+    while(totalSize--){
         const cell = document.createElement('div');
         cell.classList.add('cell');
+        cell.style.width = cellSize + 'px';
+        cell.style.height = cellSize + 'px';
         sketchpad.appendChild(cell);
     } 
     //utilize event delegation to avoid performance issues. 
